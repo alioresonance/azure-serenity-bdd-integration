@@ -1,6 +1,7 @@
 package tech.eastdilsecured.bdd.steps;
 
 import tech.eastdilsecured.bdd.model.Category;
+import tech.eastdilsecured.bdd.ui.CategoryNavigationBar;
 import tech.eastdilsecured.bdd.ui.CurrentPage;
 import tech.eastdilsecured.bdd.ui.EbayHomePage;
 import net.thucydides.core.annotations.Step;
@@ -11,6 +12,7 @@ public class NavigatingUser {
 
     EbayHomePage ebayHomePage;
     CurrentPage currentPage;
+    CategoryNavigationBar categoryNavigationBar;
 
     @Step
     public void isOnTheHomePage() {
@@ -19,12 +21,12 @@ public class NavigatingUser {
 
     @Step
     public void navigatesToCategory(Category category) {
-
+        categoryNavigationBar.selectCategory( category );
     }
 
     @Step
     public void shouldSeePageTitleContaining(String expectedTitle) {
-        assertThat(currentPage().getTitle()).isEqualTo( expectedTitle );
+        assertThat( currentPage.getTitle() ).isEqualToIgnoringCase( expectedTitle );
     }
 
 }

@@ -1,5 +1,6 @@
 package tech.eastdilsecured.bdd.model;
 
 public enum Category {
-    Motors
+    Saved, Home, Motors, Fashion, Electronics, CollectiblesAndArt, HomeAndGarden, SportingGoods,
+    Toys, BusinessAndIndustrial, Music, Deals
 }
