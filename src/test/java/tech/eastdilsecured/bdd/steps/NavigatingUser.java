@@ -26,7 +26,7 @@ public class NavigatingUser {
 
     @Step
     public void shouldSeePageTitleContaining(String expectedTitle) {
-        assertThat( currentPage.getTitle() ).isEqualToIgnoringCase( expectedTitle );
+        assertThat( currentPage.getTitle() ).containsIgnoringCase( expectedTitle );
     }
 
 }

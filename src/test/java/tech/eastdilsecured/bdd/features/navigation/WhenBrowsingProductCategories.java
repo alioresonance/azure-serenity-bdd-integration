@@ -10,6 +10,8 @@ import org.openqa.selenium.WebDriver;
 import tech.eastdilsecured.bdd.model.Category;
 import tech.eastdilsecured.bdd.steps.NavigatingUser;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 @RunWith(SerenityRunner.class)
 public class WhenBrowsingProductCategories {
 
@@ -44,11 +46,15 @@ public class WhenBrowsingProductCategories {
     public void shouldBeAbleToNavigateToTheMotorsCategory() {
         // Given
         john.isOnTheHomePage();
-
         // When
-        //john.navigatesToCategory(Category.Motors);
-
+        john.navigatesToCategory(Category.Motors);
         // Then
-        //john.shouldSeePageTitleContaining("New & used cars");
+        john.shouldSeePageTitleContaining("Auto Parts and Vehicles");
     }
+
+    @Test
+    public void purposefullyFailingTestToSeeFailuresOnAzure() {
+        assertThat( false ).isTrue();
+    }
+
 }
