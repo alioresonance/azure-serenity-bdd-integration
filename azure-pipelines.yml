@@ -19,4 +19,4 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/site/serenity/*.html'
-    goals: 'package'
+    goals: 'verify'
